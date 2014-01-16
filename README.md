@@ -1,5 +1,5 @@
-AWS Elastic Beanstalk Deployment Notifier for New Relic
-=======================================================
+AWS Elastic Beanstalk Deployment Notifications for New Relic
+============================================================
 
 This script can be executed as part of the [container commands directive](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-ec2.html#customize-containers-format-files) supported by [Elastic Beanstalk extensions](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customize-containers-ec2.html) to send a deployment notification to [New Relic](http://www.newrelic.com/) via the HTTP API service.
 
