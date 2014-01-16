@@ -6,11 +6,11 @@ This script can be executed as part of the [container commands directive](http:/
 Installation
 ------------
 
-1. [Download](https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/aws-eb-newrelic-deploynotify.sh) the bash script from this project into your application.
+1. [Download](https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/master/aws-eb-newrelic-deploynotify.sh) the bash script from this project into your application.
 
         cd /path/to/your/app
         mkdir bin
-        wget -P "./bin/" "https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/aws-eb-newrelic-deploynotify.sh"
+        wget -P "./bin/" "https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/master/aws-eb-newrelic-deploynotify.sh"
 
 2. Create an `.ebextensions` directory in your application root:
 
