@@ -20,12 +20,12 @@ Installation
 3. Create a new file (or append to an existing one) for the `container_commands` configuration:
 
         echo "00_aws-eb-newrelic-deploynotify:" >> .ebextensions/03_container_commands.config
-        echo "  command: "bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>"" >> .ebextensions/03_container_commands.config
+        echo "  command: \"bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>\"" >> .ebextensions/03_container_commands.config
 
     Note: If you already have a file for container commands, simply append the following lines:
 
         00_aws-eb-newrelic-deploynotify:
-          command: "bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>
+          command: "bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>"
 
     Don't forget to replace the arguments with the correct values.
 
