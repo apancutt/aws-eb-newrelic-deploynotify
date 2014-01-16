@@ -10,7 +10,8 @@ Installation
 
         cd /path/to/your/app
         mkdir bin
-        wget -P "./bin/" "https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/master/aws-eb-newrelic-deploynotify.sh"
+        wget -P bin "https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/master/aws-eb-newrelic-deploynotify.sh"
+        chmod +x bin/aws-eb-newrelic-deploynotify.sh
 
 2. Create an `.ebextensions` directory in your application root:
 
