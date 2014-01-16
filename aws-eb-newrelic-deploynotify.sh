@@ -83,7 +83,7 @@ if [[ ${verbose} == 1 ]]; then
     info "Sending deployment notification..."
 fi
 
-http_response=$(curl -s -D - -H "x-api-key:${api_key}" -d "deployment[app_name]=${app_name}&deployment[revision]=${app_version}&deployment[user]=${deployer}" https://rpm.newrelic.com/deployments.xml -o /dev/null)
+http_response=$(curl -s -D - -H "x-api-key:${api_key}" -d "deployment[app_name]=${app_name}&deployment[revision]=${app_version}&deployment[user]=${deployer}" "https://rpm.newrelic.com/deployments.xml" -o /dev/null)
 http_status=$(echo "${http_response}" | head -n 1)
 echo "${http_status}" | grep -q "201"
 
