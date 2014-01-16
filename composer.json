@@ -1,0 +1,12 @@
+{
+    "name": "apancutt/aws-eb-newrelic-deploynotify",
+    "description": "Send AWS Elastic Beanstalk deployment notifications to New Relic.",
+    "license": "MIT",
+    "type": "library",
+    "bin": ["aws-eb-newrelic-deploynotify.sh"]
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
