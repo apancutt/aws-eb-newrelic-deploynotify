@@ -29,7 +29,7 @@ Installation
 
     Don't forget to replace the arguments with the correct values.
 
-4. Deploy to Elastic Beanstalk and check New Relic for a deployment notification (Applications > Your App > Events > Deployments).
+4. Deploy to Elastic Beanstalk and check New Relic for a deployment notification (Applications > Your App > Events > Deployments). If a notification doesn't appear, check your environment logs in Elastic Beanstalk for any errors.
 
 Usage
 -----
