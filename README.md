@@ -6,27 +6,28 @@ This script can be executed as part of the [container commands directive](http:/
 Installation
 ------------
 
-1. [Download](https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/master/aws-eb-newrelic-deploynotify.sh) the bash script from this project into your application.
+1. In the `require` key of `composer.json` file add the following
 
-        cd /path/to/your/app
-        mkdir bin
-        wget -P bin "https://raw.github.com/apancutt/aws-eb-newrelic-deploynotify/master/aws-eb-newrelic-deploynotify.sh"
-        chmod +x bin/aws-eb-newrelic-deploynotify.sh
+        "apancutt/aws-eb-newrelic-deploynotify": "v1.0"
 
-2. Create an `.ebextensions` directory in your application root:
+2. Run the Composer update command
+
+        $ composer update
+
+3. Create an `.ebextensions` directory in your application root:
 
         mkdir .ebextensions
 
-3. Create a new file (or append to an existing one) for the `container_commands` configuration:
+4. Create a new file (or append to an existing one) for the `container_commands` configuration:
 
         echo "00_aws-eb-newrelic-deploynotify:" >> .ebextensions/03_container_commands.config
-        echo "  command: \"bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>\"" >> .ebextensions/03_container_commands.config
+        echo "  command: \"vendor/bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>\"" >> .ebextensions/03_container_commands.config
         echo "  leader_only: true" >> .ebextensions/03_container_commands.config
 
     Note: If you already have a file for container commands, simply append the following lines:
 
         00_aws-eb-newrelic-deploynotify:
-          command: "bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>"
+          command: "vendor/bin/aws-eb-newrelic-deploynotify.sh -a <APP NAME> -k <API KEY>"
           leader_only: true
 
     Don't forget to replace the arguments with the correct values.
