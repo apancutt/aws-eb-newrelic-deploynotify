@@ -8,11 +8,11 @@ Installation
 
 1. In the `require` key of `composer.json` file add the following
 
-    "apancutt/aws-eb-newrelic-deploynotify": "v1.0"
+        "apancutt/aws-eb-newrelic-deploynotify": "v1.0"
 
 2. Run the Composer update command
 
-    $ composer update
+        $ composer update
 
 3. Create an `.ebextensions` directory in your application root:
 
