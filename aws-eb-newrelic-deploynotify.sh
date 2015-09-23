@@ -68,11 +68,16 @@ if [[ -z "${deployer}" ]]; then
     deployer="AWS Elastic Beanstalk"
 fi
 
-if [[ -z "${EB_CONFIG_SOURCE_BUNDLE}" || ! -f "${EB_CONFIG_SOURCE_BUNDLE}" ]]; then
-    error "Failed to locate source bundle at: ${EB_CONFIG_SOURCE_BUNDLE}"
+if [[ -z "${EB_CONFIG_SOURCE_BUNDLE}" ]]; then
+  source_path="/opt/elasticbeanstalk/deploy/appsource/source_bundle"
+else
+  source_path="${EB_CONFIG_SOURCE_BUNDLE}"
+fi
+if [[ ! -f "${source_path}" ]]; then
+    error "Failed to locate source bundle at: ${source_path}"
 fi
 
-app_version=$(unzip -z "${EB_CONFIG_SOURCE_BUNDLE}" | tail -n 1)
+app_version=$(unzip -z "${source_path}" | tail -n 1)
 if [[ -z "${app_version}" ]]; then
     error "Unable to extract application version from source bundle"
 fi
